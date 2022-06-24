@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lights {
+            display: flex;
+            /* flex-direction: row;
+            justify-content: center;
+            align-items: center; */
+            flex-wrap: wrap;
+            width: 450px;
+            height: 350px;
+            border: 2px solid black;
+        }
+
+        .color {
+            flex-basis: 120px;
+            /* по. умолч. 1, т.е. элементы будут ужиматься во флекс-контейнере 
+                при значении 0 это происходить не будет
+            */
+            flex-shrink: 0;
+            min-width: 50px;
+            min-height: 50px;
+            margin: 5px;
+        }
+
+        .red { 
+            /* width: 100px;
+            height: 150px; */
+            /* Устанавливает размер флекс-элем. вдоль главной оси */
+            /* flex-basis: 100%; */
+
+            /* по умолч. 0, т.е. элемент не растягивается, 1 элем. растягивается 
+            flex-grow можно использовать как распределение веса между элементами в ряду
+            т.е. свободное пространство будет выделяться на элем., если его значение больше чем
+            у других элем. в этом ряду
+            */
+
+            /* flex-grow: 1; */
+            background-color: red; 
+            flex-grow: 1;
+        }
+        .yellow { 
+            background-color: yellow; 
+            /* margin-top: auto;
+            align-self: flex-end; */
+            flex-grow: 2;
+        }
+        .green { 
+            background-color: green; 
+            /* margin-bottom: auto; */
+        }
+        .blue { 
+            background-color: blue;
+            /* Сокращенной свойство flex 
+            flex: flex-grow flex-shrink flex-basis
+            */
+            flex: 1 1 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="lights">
+        <div class="color red"></div>
+        <div class="color yellow"></div>
+        <div class="color green"></div>
+        <div class="color blue"></div>
+    </div>
+</body>
+</html>
